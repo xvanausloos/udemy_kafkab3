@@ -1,2 +1,3 @@
 rootProject.name = 'udemy_kafkab3'
+include 'kafka-basics'
 
