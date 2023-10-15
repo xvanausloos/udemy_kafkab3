@@ -10,6 +10,12 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
 
+/*
+Module 46 Java producer callback
+Prerequisite: use a topic with several partitions
+ kafka-topics.sh --bootstrap-server localhost:9092 --alter --topic demo_java --partitions 3
+ */
+
 public class ProducerDemoWithCallback {
 
     private static final Logger log = LoggerFactory.getLogger(ProducerDemoWithCallback.class.getSimpleName());
@@ -31,7 +37,7 @@ public class ProducerDemoWithCallback {
         for (int j = 0; j < 10; j++) {
             for (int i = 0; i < 30; i++) {
                 //create a producer record
-                ProducerRecord<String, String> producerRecord = new ProducerRecord<>("demo_java", "hello_world");
+                ProducerRecord<String, String> producerRecord = new ProducerRecord<>("demo_java", "hello_world" + i);
 
                 //send data
                 producer.send(producerRecord, new Callback() {
