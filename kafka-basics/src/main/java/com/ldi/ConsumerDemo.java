@@ -14,6 +14,9 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.Properties;
 
+/*
+module 48 Java consumer
+ */
 public class ConsumerDemo {
 
     private static final Logger log = LoggerFactory.getLogger(ConsumerDemo.class.getSimpleName());
@@ -51,10 +54,6 @@ public class ConsumerDemo {
                 log.info("Key: " + record.key() + " - Value: " + record.value());
                 log.info("Partition: " + record.partition() + " - offset " + record.offset());
             }
-
         }
-
-
-
     }
 }
